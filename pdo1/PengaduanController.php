@@ -26,6 +26,7 @@ class PengaduanController extends ConnectPDO
         $nik    = $request['nik'];
         $laporan    = $request['laporan'];
         $foto   = $request['foto'];
+        
         $status = 0;
 
         $query = "INSERT INTO pengaduan (tgl_pengaduan, nik, isi_laporan, foto, status ) VALUES ('$tgl','$nik','$laporan','$foto','$status')";
@@ -82,6 +83,20 @@ class PengaduanController extends ConnectPDO
         window.location.href = 'view/pengaduan/index.php'
         </script>";
     }
+
+    public function save()
+	{
+		if(isset($_POST['submit'])){
+			$data = [
+				'gambar' => $_FILES['foto']['name'],
+				'tmp'    => $_FILES['foto']['tmp_name'],
+				'date'   => date('Y-m-d H:i:s')
+			];
+			move_uploaded_file($data['tmp'],'images/'. $data['foto']);
+			parent::insert($data['foto'], $data['date']);
+			header('location:index.php');
+		}
+	}
 }
 
 

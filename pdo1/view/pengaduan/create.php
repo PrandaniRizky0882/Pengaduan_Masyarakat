@@ -12,10 +12,12 @@
         <input type="text" name="nik" id="nik" required>
         <label for="laporan">Laporan</label>
         <input type="text" name="laporan" id="laporan" required>
-        <label for="nik">Foto</label>
-        <input type="text" name="foto" id="foto" required>
+        <label for="foto">Foto</label>
+        <input type="file" name="foto" id="foto" required>
 
         <input type="submit" name="store" value="Tambah pengaduan baru">
     </form>
 </body>
 </html>
+
+

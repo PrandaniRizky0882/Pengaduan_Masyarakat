@@ -118,6 +118,13 @@ class MasyarakatController extends ConnectPDO {
         </script>";
     }
 
+
+    public function cek_login() {
+
+
+        
+    }
+
 }
 
 
