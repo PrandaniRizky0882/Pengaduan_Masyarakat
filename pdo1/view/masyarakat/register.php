@@ -19,7 +19,7 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-              <form>
+              <form action="../../MasyarakatController.php" method="POST">
 
                 <div class="form-outline mb-4">
                 <label class="form-label" for="form3Example1cg">Nik</label>
@@ -33,7 +33,7 @@
 
                 <div class="form-outline mb-4">
                 <label class="form-label" for="form3Example1cg">Username</label>
-                  <input type="email" id="username" id="username" class="form-control form-control-lg" placeholder="Example@gmail.com" required/>
+                  <input type="text" id="username" id="username" class="form-control form-control-lg" placeholder="Example@gmail.com" required/>
                 </div>
 
                 <div class="form-outline mb-4">
@@ -48,12 +48,12 @@
 
                 <div class="form-outline mb-4">
                 <label class="form-label" for="form3Example1cg">Telephone</label>
-                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" placeholder="0xxxxxxxxxxxx"/>
+                  <input type="text" name="telp" id="telp" class="form-control form-control-lg" placeholder="0xxxxxxxxxxxx"/>
                 </div>
 
                 <div class="d-flex justify-content-center">
                   <button type="submit"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" name="register">Register</button>
                 </div>
 
                 <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="../masyarakat/login.php"

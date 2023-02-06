@@ -4,7 +4,6 @@ $index = $pengaduan->index();
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +12,8 @@ $index = $pengaduan->index();
   <title>Pengaduan | Masyarakat</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet"
+ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../assets/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
@@ -27,10 +27,10 @@ $index = $pengaduan->index();
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a class="nav-link" data-widget="pushmenu" href="#" role="input"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../../index3.html" class="nav-link">Home</a>
+        <a href="../dashboard.php" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="register.php" class="nav-link">Register</a>
@@ -41,11 +41,6 @@ $index = $pengaduan->index();
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
-      <img src="../../assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">MudaMudi</span>
-    </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -62,7 +57,7 @@ $index = $pengaduan->index();
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="../dashboard.php" class="nav-link">
+            <a href="../v2_dashboard.php" class="nav-link">
               <i class="nav-icon fas fa-desktop"></i>
               <p>
                 Dashboard
@@ -138,22 +133,25 @@ $index = $pengaduan->index();
                   <a href="../pengaduan/create.php" class="btn btn-success">Tambah Pengaduan</a><br></br>
                   <thead>
                   <tr>
-                    <th>Tanggal</th>
+                    <th>Tanggal Pengaduan</th>
                     <th>Nik</td>
-                    <th>Laporan Pengaduan</th>
-                    <th>Foto</th>
+                    <th>Detail -- Edit</th>
                     <th>Status</th>
                     <th>More</th>
                   </tr>
                   </thead>
+                
                   <tbody>
+                  
               <?php if ($index != null) : ?>
                 <?php foreach ($index as $i) : ?>
+                  
                   <tr>
                     <td><?= $i->tgl_pengaduan ?></td>
                     <td><?= $i->nik ?></td>
-                    <td><?= $i->isi_laporan ?></td>
-                    <td><?= $i->foto ?></td>
+                    <td><a href=show.php?id=<?= $i->id_pengaduan ?> class="btn btn-info">Detail</a> |  <a href=edit.php?id=<?=$i->id_pengaduan ?> class="btn btn-success" name="edit">Edit</a></td>
+                    <!-- <td><?= $i->isi_laporan ?></td>
+                    <td><?= $i->foto ?></td> -->
                     <?php if ($i->status == 0) : ?>
                 <td>Belum diproses</td>
             <?php elseif ($i->status == 'proses') : ?>
@@ -161,7 +159,11 @@ $index = $pengaduan->index();
             <?php elseif ($i->status == 'selesai') : ?>
                 <td>Selsai diproses</td>
             <?php endif ; ?>
-                    <td><a href="../pengaduan/edit.php" class="btn btn-success">Edit</a> | <a href="../../PengaduanController.php" class="btn btn-danger">Hapus</a></td>
+            <!-- menggunakan form-->
+                    <td><form action="../../PengaduanController.php?id=<?= $i->id_pengaduan ?>" method="post">
+                        <button class="btn btn-danger" name="delete">Hapus</button>
+                    </form>
+                    </td>
                   </tr>
                   <?php endforeach; ?>
             <?php else : ?>
@@ -173,8 +175,7 @@ $index = $pengaduan->index();
                     <th>Tanggal Pengaduan</th>
                     <th>Nik</th>
                     <th>Laporan Pengaduan</th>
-                    <th>Foto</th>
-                    <th>status</th>
+                    <th>Status</th>
                     <th>More</th>
                   </tr>
                   </tfoot>

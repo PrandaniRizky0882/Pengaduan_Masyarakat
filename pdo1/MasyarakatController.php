@@ -58,7 +58,7 @@ class MasyarakatController extends ConnectPDO {
 
                     echo "<script>
                     alert('Berhasil mendaftarkan user')
-                    window.location.href='view/masyarakat/index.php'
+                    window.location.href='view/pengaduan/index.php'
                     </script>";
                 } else {
                     echo "<script>

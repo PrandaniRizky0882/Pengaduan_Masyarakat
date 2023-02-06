@@ -1,11 +1,3 @@
-<?php
-session_start();
-if (!$_SESSION['auth']) {
-    header('Location: masyarakat/index.php');
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,7 +69,7 @@ if (!$_SESSION['auth']) {
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="../view/dashboard.php" class="nav-link">
               <i class="nav-icon fas fa-desktop"></i>
               <p>
                 Dashboard
@@ -117,87 +109,40 @@ if (!$_SESSION['auth']) {
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>pengaduan</h1>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
-
-    !-- Main content -->
-       <section class="content">
+    <!-- Main content -->
+<div class="inner-header" style="padding-top: 30px"></div>
+    <section class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
+            <!-- Default box -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <h3 class="card-title">Selamat Datang,<i></i></h3>  <!--?=$user['username']?>-->
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
               </div>
-              <!-- /.card-header -->
               <div class="card-body">
-                <table id="example2" class="table table-bordered table-hover">
-                  <thead>
-                  <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>X</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 5.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td>5</td>
-                    <td>C</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 5.5
-                    </td>
-                    <td>Win 95+</td>
-                    <td>5.5</td>
-                    <td>A</td>
-                  </tr>
-                  </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
-                  </tr>
-                  </tfoot>
-                </table>
+                <h1>Aplikasi Pengaduan Masyarakat</h1>
+                <h4>Berbasis Web</h4>
               </div>
               <!-- /.card-body -->
+              <div class="card-footer">
+                Dusun Mekar Sari
+              </div>
+              <!-- /.card-footer-->
             </div>
             <!-- /.card -->
           </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
       </div>
-      <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
@@ -226,6 +171,3 @@ if (!$_SESSION['auth']) {
 <script src="../assets/dist/js/adminlte.min.js"></script>
 </body>
 </html>
-
-
-
