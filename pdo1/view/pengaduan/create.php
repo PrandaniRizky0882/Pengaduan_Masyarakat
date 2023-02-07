@@ -97,6 +97,10 @@
               <!-- form start -->
               <form action="../../PengaduanController.php" method="post">
                 <div class="card-body">
+                <div class="form-group">
+                    <label for="tanggal">Tanggal Laporan</label>
+                    <input type="date" class="form-control" id="tgl_pengaduan" name="tgl_pengaduan" >
+                  </div>
                   <div class="form-group">
                     <label for="nik">Nik</label>
                     <input type="text" class="form-control" id="nik" name="nik" placeholder="0xxxxxxxxxxxxxxxx">

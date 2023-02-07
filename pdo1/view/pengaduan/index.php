@@ -149,7 +149,7 @@ $index = $pengaduan->index();
                   <tr>
                     <td><?= $i->tgl_pengaduan ?></td>
                     <td><?= $i->nik ?></td>
-                    <td><a href=show.php?id=<?= $i->id_pengaduan ?> class="btn btn-info">Detail</a> |  <a href=edit.php?id=<?=$i->id_pengaduan ?> class="btn btn-success" name="edit">Edit</a></td>
+                    <td><a href=show.php?id=<?= $i->id_pengaduan ?> class="btn btn-info">Detail</a> |  <a href=edit.php?id=<?=$i->id_pengaduan ?> class="btn btn-success">Edit</a></td>
                     <!-- <td><?= $i->isi_laporan ?></td>
                     <td><?= $i->foto ?></td> -->
                     <?php if ($i->status == 0) : ?>
@@ -160,7 +160,7 @@ $index = $pengaduan->index();
                 <td>Selsai diproses</td>
             <?php endif ; ?>
             <!-- menggunakan form-->
-                    <td><form action="../../PengaduanController.php?id=<?= $i->id_pengaduan ?>" method="post">
+                    <td><form action="delete.php?id=<?= $i->id_pengaduan ?>" method="post">
                         <button class="btn btn-danger" name="delete">Hapus</button>
                     </form>
                     </td>

@@ -28,7 +28,7 @@ class PengaduanController extends ConnectPDO {
          * Mengajukan pengaduan baru
          */
 
-        $tgl        = '2023-02-02';
+        $tgl        = $request['tgl_pengaduan'];
         $nik        = $request['nik'];
         $laporan    = $request['laporan'];
         $foto       = $request['foto'];
@@ -59,22 +59,21 @@ class PengaduanController extends ConnectPDO {
         $query = "SELECT * FROM pengaduan WHERE id_pengaduan = $id";
         $edit = $this->pdo->prepare($query);
         $edit->execute();
-        $result = $edit->fetchAll(PDO::FETCH_OBJ);
+        $result = $edit->fetch(PDO::FETCH_OBJ);
+        return $result;
 
-        header("Location: view/pengaduan/edit.php");
     }
 
     public function update($request, $id)
     {
-        $tgl    = $request['tgl'];
-        $nik    = $request['nik'];
-        $isi    = $request['isi'];
-        $foto   = $request['foto'];
-        $status = $request['status'];
 
-        $query = "UPDATE pengaduan SET tgl_pengaduan = '$tgl', nik = '$isi', isi_laporan = '$isi', foto = '$foto', status = '$status' WHERE id = $id";
-        $store = $this->pdo->prepare($query);
-        $store->execute();
+        $nik        = $request['nik'];
+        $laporan    = $request['isi_laporan'];
+        $foto       = $request['foto'];
+
+        $query = "UPDATE pengaduan SET nik = '$nik', isi_laporan = '$laporan', foto = '$foto' WHERE id_pengaduan = $id";
+        $update = $this->pdo->prepare($query);
+        $update->execute();
 
         echo "<script>
             alert('Berhasil mengubah pengaduan!')
@@ -102,6 +101,13 @@ if (isset($_POST['store'])) {
     $pengaduan->store($_POST);
 }
 
-// if (isset($_GET['delete'])) {
-//     $pengaduan->delete($_GET['id']);
-// }
+if (isset($_POST['destroy'])) {
+    $pengaduan->store($_POST);
+}
+
+if (isset($_POST['update'])) {
+
+    $pengaduan->update($_POST, $_GET['id']);
+}
+
+

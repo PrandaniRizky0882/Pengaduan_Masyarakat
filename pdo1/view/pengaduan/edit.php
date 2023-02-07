@@ -1,8 +1,10 @@
 <?php
 
-include('../../PengaduanController.php');
-$idGet = $_GET['id'];
-$edit = $pengaduan->edit($idget);
+include '../../PengaduanController.php';
+
+$get = $_GET['id'];
+$edit = $pengaduan->edit($get);
+
 ?>
 
 <!DOCTYPE html>
@@ -102,15 +104,15 @@ $edit = $pengaduan->edit($idget);
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="../../PengaduanController.php" method="post">
+              <form action="../../PengaduanController.php?id=<?= $edit->id_pengaduan ?>" method="post">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="nik">Nik</label>
-                    <text type="text" class="form-control" id="nik" name="nik"  value="<?= $edit->nik ?>">
+                    <input type="text" class="form-control" name="nik" id="nik"  value="<?= $edit->nik ?>">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Laporan</label>
-                    <input type="text" class="form-control" id="laporan" name="laporan" placeholder="Masukan disini">
+                    <input type="text" class="form-control" name="isi_laporan" id="isi_laporan" value="<?= $edit->isi_laporan ?>">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputFile">Foto</label>
@@ -119,15 +121,12 @@ $edit = $pengaduan->edit($idget);
                         <input type="file" class="custom-file-input" id="foto" name="foto">
                         <label class="custom-file-label" for="foto">Choose file</label>
                       </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div>
                     </div>
                   </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" name="update" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="update" class="btn btn-primary">Update</button>
                 </div>
               </form>
             </div>
