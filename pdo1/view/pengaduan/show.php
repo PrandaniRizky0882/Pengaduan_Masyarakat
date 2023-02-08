@@ -60,7 +60,7 @@ $show = $pengaduan->show($id_pengaduan);
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="../dashboard.php" class="nav-link">
+            <a href="../v2_dashboard.php" class="nav-link">
               <i class="nav-icon fas fa-desktop"></i>
               <p>
                 Dashboard
@@ -73,7 +73,7 @@ $show = $pengaduan->show($id_pengaduan);
             <a href="../../view/pengaduan/index.php" class="nav-link">
               <i class="nav-icon fas fa-arrow-circle-left"></i>
               <p>
-                Keluar
+                Kembali
               </p>
             </a>
           </li>
@@ -121,7 +121,7 @@ $show = $pengaduan->show($id_pengaduan);
                   <tr>
                     <td><?= $show->nik ?></td>
                     <td><?= $show->isi_laporan ?></td>
-                    <td><?= $show->foto ?></td>
+                    <td><img src="../../img/<?=$show->foto; ?>" width="100"/></td>
                   </tr>
                   </tbody>
                 </table>

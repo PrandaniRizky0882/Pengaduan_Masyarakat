@@ -95,7 +95,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="../../PengaduanController.php" method="post">
+              <form action="../../PengaduanController.php" method="post" enctype="multipart/form-data">
                 <div class="card-body">
                 <div class="form-group">
                     <label for="tanggal">Tanggal Laporan</label>

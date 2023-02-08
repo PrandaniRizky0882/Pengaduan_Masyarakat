@@ -2,7 +2,7 @@
 
 include '../../PengaduanController.php';
 
-$get = $_GET['id'];
+$get = $_GET['id']; // sebagai parameter id pada parameter update
 $edit = $pengaduan->edit($get);
 
 ?>
@@ -104,7 +104,7 @@ $edit = $pengaduan->edit($get);
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="../../PengaduanController.php?id=<?= $edit->id_pengaduan ?>" method="post">
+              <form action="../../PengaduanController.php?id=<?= $edit->id_pengaduan ?>" method="post" enctype="multipart/form-data">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="nik">Nik</label>

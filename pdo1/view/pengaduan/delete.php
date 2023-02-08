@@ -2,10 +2,8 @@
 
 include '../../PengaduanController.php';
 
-$id_pengaduan = $_GET['id'];
+$id_pengaduan = $_GET['id']; // sebagai parameter id mengunakan super global get
 $destroy = $pengaduan->destroy($id_pengaduan);
 
-// $msql = 'DELETE FROM pengaduan WHERE id_pengaduan="'.$id_pengaduan.'"';
-// $query = mysqli_query($query,$msql);
 header('location: index.php');
 ?>
